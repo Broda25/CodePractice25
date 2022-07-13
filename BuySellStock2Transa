@@ -1,0 +1,18 @@
+Best time buy sell stock 2 transactions.
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int buy1st = Integer.MAX_VALUE;
+        
+        int profit1 =0 ;
+        int buy2nd = Integer.MAX_VALUE;
+        int profit2 = 0;
+        for(int x: prices){
+            buy1st = Math.min(buy1st,x);
+            profit1 = Math.max(profit1,x-buy1st);
+            buy2nd = Math.min(buy2nd,x-profit1);
+            profit2 = Math.max(profit2,x-buy2nd);
+        }
+        return profit2;
+    }
+}
