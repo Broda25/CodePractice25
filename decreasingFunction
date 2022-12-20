@@ -1,0 +1,26 @@
+// This a code to represent recursion on decreasing/Increasing function
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        printIncreasing(n);
+        
+    }
+
+    public static void printIncreasing(int n){
+        if(n==0){
+            return;
+        }
+        System.out.println(n); //increasing
+        printIncreasing(n-1);
+        System.out.println(n);//decreasing
+        
+    }
+
+}
